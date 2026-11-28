@@ -8,8 +8,9 @@ export const metadata: Metadata = {
   description:
     "Free online tools for PDFs, images, text and everyday tasks. Simple tools that work in your browser.",
   other: {
-    "google-adsense-account": "ca-pub-9283188151940862",
-  },
+  "google-adsense-account": "ca-pub-9283188151940862",
+  "google-site-verification": "rXaFnUoB_jrXbnKvvwArVFMOn74-m_evFqC6ZuCM-aM",
+},
 };
 
 export default function RootLayout({
