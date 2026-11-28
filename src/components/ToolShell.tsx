@@ -1,4 +1,40 @@
+
 import Link from "next/link";
-export default function ToolShell({title,description,children}:{title:string;description:string;children:React.ReactNode}) {
- return <main className="container tool-page"><div className="breadcrumb"><Link href="/">Home</Link> / <span>{title}</span></div><div className="tool-heading"><h1>{title}</h1><p>{description}</p></div><section className="tool-panel">{children}</section></main>;
+import type { ReactNode } from "react";
+
+type ToolShellProps = {
+  title: string;
+  description: string;
+  children: ReactNode;
+};
+
+export default function ToolShell({
+  title,
+  description,
+  children,
+}: ToolShellProps) {
+  return (
+    <main className="container tool-page">
+      <nav
+        className="breadcrumb"
+        aria-label="Breadcrumb"
+      >
+        <Link href="/">Home</Link>
+        <span aria-hidden="true"> / </span>
+        <span aria-current="page">{title}</span>
+      </nav>
+
+      <header className="tool-heading">
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </header>
+
+      <section
+        className="tool-panel"
+        aria-label={`${title} tool`}
+      >
+        {children}
+      </section>
+    </main>
+  );
 }
